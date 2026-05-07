@@ -1,0 +1,74 @@
+---
+title: "Best Practices"
+description: "How to write and structure your documents so your chatbot gives the best answers."
+---
+
+## Write like you're answering customers
+
+Your documents are the source of truth for your bot. If the answer isn't in your docs, the bot will say it doesn't know. Write content that directly answers common customer questions.
+
+**Instead of:**
+> Returns are subject to our standard policy as outlined in section 4.2.
+
+**Write:**
+> You can return any unworn item within 30 days of delivery. The item must have tags intact. To start a return, WhatsApp us at +91-XXXXXXXXXX with your order ID.
+
+---
+
+## Use Q&A format for FAQs
+
+The clearest format for chatbots is a simple Q&A structure:
+
+```
+Q: What is your return policy?
+A: We offer 30-day easy returns on all unworn items with tags intact.
+
+Q: How long does delivery take?
+A: Standard delivery takes 4–7 business days across India.
+```
+
+---
+
+## Use clear headings
+
+Doqo uses headings to understand the structure of your document. Use proper heading levels:
+
+```
+# Return Policy
+
+## Eligibility
+Items must be unworn and have original tags.
+
+## How to Return
+WhatsApp us at +91-XXXXXXXXXX with your order ID.
+
+## Refund Timeline
+Refunds are processed within 5–7 business days.
+```
+
+---
+
+## One topic per Knowledge Base
+
+Don't mix return policies with shipping information in the same KB. Create separate KBs for:
+
+- Return & Exchange Policy
+- Shipping & Delivery
+- Product FAQs
+- Size Guide
+
+This keeps answers precise and avoids confusion.
+
+---
+
+## Keep content fresh
+
+<Tip>
+  Every time your policy changes, delete the old file and upload the updated version. Outdated content = wrong answers.
+</Tip>
+
+---
+
+## Check your Gap Report
+
+After going live, visit **Dashboard → Gap Report** weekly. It shows exactly which questions customers asked that your bot couldn't answer. Use those questions to write new content and re-upload.

@@ -1,0 +1,41 @@
+---
+title: "Shopify"
+description: "Add Doqo to your Shopify store — no app needed."
+---
+
+## Installation
+
+<Steps>
+  <Step title="Go to your Shopify admin">
+    Log in to your Shopify admin panel and go to **Online Store → Themes**.
+  </Step>
+  <Step title="Edit your theme code">
+    Click the three dots `(...)` next to your active theme and select **Edit Code**.
+  </Step>
+  <Step title="Open theme.liquid">
+    In the left sidebar under **Layout**, click on `theme.liquid`.
+  </Step>
+  <Step title="Find the closing body tag">
+    Use Ctrl+F (or Cmd+F) to search for `</body>`.
+  </Step>
+  <Step title="Paste the script">
+    Paste the Doqo script just above `</body>`:
+
+    ```html
+    <script
+      src="https://doqo.in/widget.js"
+      data-kb="YOUR_KB_ID"
+      data-color="#E05C3A"
+      data-name="Support Bot"
+      data-greeting="Hi! How can I help you today?">
+    </script>
+    ```
+  </Step>
+  <Step title="Save">
+    Click **Save** in the top right. Your chatbot is now live on your store.
+  </Step>
+</Steps>
+
+<Tip>
+  You can set `data-color` to match your store's brand color for a seamless experience.
+</Tip>

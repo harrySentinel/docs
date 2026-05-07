@@ -1,0 +1,108 @@
+---
+title: "POST /api/public-chat"
+description: "Send a message to a Doqo Knowledge Base and get an AI-generated answer."
+---
+
+## Endpoint
+
+```
+POST https://doqo.in/api/public-chat
+```
+
+This is a public endpoint — no authentication required. It's the same API your embed widget and shareable chat link use.
+
+## Request
+
+### Headers
+
+```
+Content-Type: application/json
+```
+
+### Body
+
+```json
+{
+  "message": "What is your return policy?",
+  "kbId": "YOUR_KB_ID"
+}
+```
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `message` | string | ✅ | The customer's question |
+| `kbId` | string | ✅ | Your Knowledge Base ID |
+
+## Response
+
+### Success (200)
+
+```json
+{
+  "answer": "We offer 30-day easy returns on unworn items with tags intact. To start a return, WhatsApp us at +91-XXXXXXXXXX with your order ID.",
+  "chunksUsed": 3
+}
+```
+
+| Field | Type | Description |
+|---|---|---|
+| `answer` | string | AI-generated answer based on your documents |
+| `chunksUsed` | number | Number of document chunks used to generate the answer |
+
+### No relevant content found (200)
+
+```json
+{
+  "answer": "I couldn't find relevant information to answer that. Try asking something else!",
+  "chunksUsed": 0
+}
+```
+
+When `chunksUsed` is `0`, the question will be logged as a **gap** in your Gap Report.
+
+### Errors
+
+| Status | Description |
+|---|---|
+| `400` | Missing `message` or `kbId` in request body |
+| `404` | Knowledge Base not found |
+| `500` | Server error |
+
+## Example — JavaScript
+
+```js
+const response = await fetch("https://doqo.in/api/public-chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    message: "What is your return policy?",
+    kbId: "YOUR_KB_ID",
+  }),
+});
+
+const data = await response.json();
+console.log(data.answer);
+```
+
+## Example — Python
+
+```python
+import requests
+
+response = requests.post(
+    "https://doqo.in/api/public-chat",
+    json={
+        "message": "What is your return policy?",
+        "kbId": "YOUR_KB_ID",
+    }
+)
+
+print(response.json()["answer"])
+```
+
+## Rate limits
+
+| Plan | Requests per minute |
+|---|---|
+| Free | 20 |
+| Pro | 200 |

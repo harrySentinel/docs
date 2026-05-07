@@ -1,0 +1,34 @@
+---
+title: "Webflow"
+description: "Add Doqo to your Webflow project via Project Settings."
+---
+
+## Installation
+
+<Steps>
+  <Step title="Open Project Settings">
+    In the Webflow Designer, click the gear icon to open **Project Settings**.
+  </Step>
+  <Step title="Go to Custom Code tab">
+    Click the **Custom Code** tab at the top of the settings panel.
+  </Step>
+  <Step title="Find Footer Code">
+    Scroll down to the **Footer Code** section.
+  </Step>
+  <Step title="Paste the script">
+    Paste the Doqo script there:
+
+    ```html
+    <script
+      src="https://doqo.in/widget.js"
+      data-kb="YOUR_KB_ID"
+      data-color="#E05C3A"
+      data-name="Support Bot"
+      data-greeting="Hi! How can I help you today?">
+    </script>
+    ```
+  </Step>
+  <Step title="Save and publish">
+    Click **Save Changes** then hit **Publish**. Your chatbot is now live on your Webflow site.
+  </Step>
+</Steps>

@@ -1,0 +1,51 @@
+---
+title: "Embed Widget Overview"
+description: "Add your Doqo chatbot to any website with a single script tag."
+---
+
+## How it works
+
+The Doqo embed widget adds a floating chat button to your website. When a visitor clicks it, the chatbot opens and starts answering their questions using your Knowledge Base.
+
+It takes **one line of code** and works on every platform.
+
+## The script tag
+
+```html
+<script
+  src="https://doqo.in/widget.js"
+  data-kb="YOUR_KB_ID"
+  data-color="#E05C3A"
+  data-name="Support Bot"
+  data-greeting="Hi! How can I help you today?"
+  data-position="right">
+</script>
+```
+
+## Configuration options
+
+| Attribute | Required | Default | Description |
+|---|---|---|---|
+| `data-kb` | ✅ Yes | — | Your Knowledge Base ID |
+| `data-color` | No | `#E05C3A` | Primary color (hex) |
+| `data-name` | No | `AI Assistant` | Bot name shown in header |
+| `data-greeting` | No | `Hi! How can I help you today?` | First message the bot sends |
+| `data-position` | No | `right` | `left` or `right` |
+
+<Tip>
+  Find your **KB ID** in Dashboard → Embed. It's auto-filled in the script tag shown there.
+</Tip>
+
+## Platform guides
+
+Pick your platform for step-by-step instructions:
+
+<CardGroup cols={2}>
+  <Card title="HTML / Vanilla" icon="code" href="/embed/html">Plain HTML websites</Card>
+  <Card title="Shopify" icon="shopping-bag" href="/embed/shopify">Shopify stores</Card>
+  <Card title="WordPress" icon="globe" href="/embed/wordpress">WordPress sites</Card>
+  <Card title="Wix" icon="layout" href="/embed/wix">Wix sites</Card>
+  <Card title="Webflow" icon="layers" href="/embed/webflow">Webflow projects</Card>
+  <Card title="React" icon="atom" href="/embed/react">React apps</Card>
+  <Card title="Next.js" icon="triangle" href="/embed/nextjs">Next.js apps</Card>
+</CardGroup>

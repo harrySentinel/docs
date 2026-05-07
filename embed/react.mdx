@@ -1,0 +1,43 @@
+---
+title: "React"
+description: "Add Doqo to a React app using useEffect."
+---
+
+## Installation
+
+Use a `useEffect` to inject the widget script once on mount:
+
+```tsx
+import { useEffect } from "react";
+
+export default function App() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://doqo.in/widget.js";
+    script.setAttribute("data-kb", "YOUR_KB_ID");
+    script.setAttribute("data-color", "#E05C3A");
+    script.setAttribute("data-name", "Support Bot");
+    script.setAttribute("data-greeting", "Hi! How can I help you today?");
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return <>{/* your app */}</>;
+}
+```
+
+<Tip>
+  Add this in your root `App.tsx` or `App.jsx` so the widget loads on every page.
+</Tip>
+
+## With TypeScript
+
+The same code works in TypeScript with no changes needed.
+
+## Notes
+
+- The `useEffect` cleanup removes the script when the component unmounts, preventing duplicate widgets.
+- The empty dependency array `[]` ensures the script loads only once.

@@ -1,0 +1,60 @@
+---
+title: "Next.js"
+description: "Add Doqo to a Next.js app using next/script."
+---
+
+## Installation
+
+Use `next/script` with `strategy="lazyOnload"` in your root layout:
+
+```tsx
+// src/app/layout.tsx  (App Router)
+import Script from "next/script";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <Script
+          src="https://doqo.in/widget.js"
+          data-kb="YOUR_KB_ID"
+          data-color="#E05C3A"
+          data-name="Support Bot"
+          data-greeting="Hi! How can I help you today?"
+          strategy="lazyOnload"
+        />
+      </body>
+    </html>
+  );
+}
+```
+
+## Pages Router
+
+If you're using the Pages Router, add it to `pages/_app.tsx`:
+
+```tsx
+// pages/_app.tsx
+import Script from "next/script";
+import type { AppProps } from "next/app";
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Component {...pageProps} />
+      <Script
+        src="https://doqo.in/widget.js"
+        data-kb="YOUR_KB_ID"
+        data-color="#E05C3A"
+        data-name="Support Bot"
+        strategy="lazyOnload"
+      />
+    </>
+  );
+}
+```
+
+<Note>
+  Always use `strategy="lazyOnload"` — this ensures the widget loads after your page content and doesn't affect performance scores.
+</Note>

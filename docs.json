@@ -1,12 +1,12 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
-  "name": "Product Guide",
-  "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
+  "name": "Doqo Docs",
+  "description": "Everything you need to set up your AI chatbot — knowledge base, embed widget, WhatsApp, and API.",
   "colors": {
-    "primary": "#166E3F",
-    "light": "#26BD6C",
-    "dark": "#166E3F"
+    "primary": "#E05C3A",
+    "light": "#F28C6E",
+    "dark": "#C94E2E"
   },
   "favicon": "/favicon.ico",
   "icons": {
@@ -15,63 +15,76 @@
   "styling": {
     "eyebrows": "breadcrumbs"
   },
-  "contextual": {
-    "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
-  },
   "navigation": {
     "global": {
       "anchors": [
         {
           "anchor": "Home",
           "icon": "house",
-          "href": "/"
+          "href": "https://doqo.in"
         },
         {
-          "anchor": "Changelog",
-          "icon": "scroll-text",
-          "href": "https://www.mintlify.com/docs/changelog"
+          "anchor": "Dashboard",
+          "icon": "layout-dashboard",
+          "href": "https://doqo.in/dashboard"
         },
         {
-          "anchor": "Help",
+          "anchor": "Support",
           "icon": "life-buoy",
-          "href": "https://www.mintlify.com/docs/contact-support"
+          "href": "mailto:support@doqo.in"
         }
       ]
     },
     "directory": "card",
     "groups": [
       {
-        "group": "Platform",
-        "icon": "layers",
+        "group": "Getting Started",
+        "icon": "rocket",
         "expanded": true,
         "pages": [
-          "platform/quickstart",
-          "platform/key-concepts",
-          "platform/configuration/settings",
-          "platform/configuration/user-management",
-          "platform/administration/roles-permissions"
+          "getting-started/introduction",
+          "getting-started/quickstart"
         ]
       },
       {
-        "group": "Analytics",
-        "icon": "chart-bar",
+        "group": "Knowledge Base",
+        "icon": "book-open",
         "expanded": true,
         "pages": [
-          "analytics/quickstart",
-          "analytics/connect-data",
-          "analytics/dashboards/create-dashboard",
-          "analytics/reports/scheduled-reports"
+          "knowledge-base/overview",
+          "knowledge-base/supported-files",
+          "knowledge-base/best-practices"
         ]
       },
       {
-        "group": "Integrations",
-        "icon": "plug",
+        "group": "Embed Widget",
+        "icon": "code",
         "expanded": true,
         "pages": [
-          "integrations/quickstart",
-          "integrations/authentication",
-          "integrations/connectors/crm",
-          "integrations/webhooks/configure"
+          "embed/overview",
+          "embed/html",
+          "embed/shopify",
+          "embed/wordpress",
+          "embed/wix",
+          "embed/webflow",
+          "embed/react",
+          "embed/nextjs"
+        ]
+      },
+      {
+        "group": "Shareable Chat Link",
+        "icon": "link",
+        "expanded": false,
+        "pages": [
+          "shareable-link"
+        ]
+      },
+      {
+        "group": "API Reference",
+        "icon": "terminal",
+        "expanded": false,
+        "pages": [
+          "api-reference/public-chat"
         ]
       }
     ]
@@ -84,14 +97,14 @@
     "links": [],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Go to Dashboard",
+      "href": "https://doqo.in/dashboard"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/yourcompany",
-      "linkedin": "https://linkedin.com/company/yourcompany"
+      "x": "https://x.com/doqo_in",
+      "linkedin": "https://linkedin.com/company/doqo"
     }
   }
 }

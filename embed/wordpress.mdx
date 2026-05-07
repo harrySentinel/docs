@@ -1,0 +1,51 @@
+---
+title: "WordPress"
+description: "Add Doqo to your WordPress site using the free WPCode plugin — no coding needed."
+---
+
+## Installation (recommended — WPCode plugin)
+
+<Steps>
+  <Step title="Install WPCode">
+    Go to your WordPress admin → **Plugins → Add New**. Search for **WPCode** and install it (it's free).
+  </Step>
+  <Step title="Add a new snippet">
+    Open **WPCode → Code Snippets → + Add Snippet**.
+  </Step>
+  <Step title="Choose HTML snippet">
+    Select **Add Your Custom Code** → choose **HTML Snippet** as the type.
+  </Step>
+  <Step title="Paste the script">
+    Paste the Doqo script into the code box:
+
+    ```html
+    <script
+      src="https://doqo.in/widget.js"
+      data-kb="YOUR_KB_ID"
+      data-color="#E05C3A"
+      data-name="Support Bot"
+      data-greeting="Hi! How can I help you today?">
+    </script>
+    ```
+  </Step>
+  <Step title="Set location">
+    Set **Location** to **Site Wide Footer** so it loads on every page.
+  </Step>
+  <Step title="Activate and save">
+    Toggle the snippet to **Active** and click **Save Snippet**. You're done!
+  </Step>
+</Steps>
+
+## Alternative — theme functions.php
+
+If you're comfortable with code, you can add this to your theme's `functions.php`:
+
+```php
+function doqo_widget() {
+  echo '<script src="https://doqo.in/widget.js"
+    data-kb="YOUR_KB_ID"
+    data-color="#E05C3A"
+    data-name="Support Bot"></script>';
+}
+add_action('wp_footer', 'doqo_widget');
+```
